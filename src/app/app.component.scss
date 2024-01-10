@@ -1,0 +1,38 @@
+@font-face {
+    font-family : "helvetica" ;
+    src: url("../assets/helvetica-neue-55-cdnfonts/HelveticaNeueMedium.ttf") format('truetype'),
+    url("..//assets//helvetica-neue-55-cdnfonts/HelveticaNeue-Medium.otf") format("opentype"),
+    }
+*{
+    font-family: 'helvetica',sans-serif;
+}
+
+.headset-session{
+    display: flex;
+    margin-top: 28px;
+    font-size: 18px;
+    color: black;
+    justify-content: space-between;
+    .headset-presentation{
+        background-color: white;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    img:nth-child(1){
+        width: 71px;
+        height: 185px;
+    }
+    img:nth-child(2){
+        width: 28px;
+        height: 28px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+    .animated-bacground{
+        border-radius: 10.361px;
+        background: #F5F5F5;
+    }
+}
