@@ -12,14 +12,22 @@
     margin-top: 28px;
     font-size: 18px;
     color: black;
+    position: relative;
     justify-content: space-between;
+    gap: 20px;
     .headset-presentation{
+        height: 271px;
         background-color: white;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 115px;
 
+    }
+    img,span{
+        position: relative;
+        z-index: 2;
     }
     img:nth-child(1){
         width: 71px;
@@ -29,10 +37,52 @@
         width: 28px;
         height: 28px;
         margin-top: 10px;
-        margin-bottom: 8px;
+        margin-bottom: 7px;
     }
-    .animated-bacground{
+    .animated-background{
+        position: absolute;
+        bottom: 15px;
+        z-index: 1;
+        width: 80px;
+        height: 178px;
         border-radius: 10.361px;
-        background: #F5F5F5;
+        background:#F5F5F5;
+    }
+}
+
+
+
+.no-selected-headset{
+    height: 150px;
+    width: 119px;
+    left: -80px;
+    position: absolute;
+
+}
+
+.headsetA{
+    @extend .no-selected-headset;
+    transform: rotate(28deg);
+    top: 0px
+}
+
+.headsetB{
+    @extend .no-selected-headset;
+    transform: rotate(121.208deg);
+    bottom: 0px;
+}
+.headsetC{
+    @extend .no-selected-headset;
+    height: 630px;
+    width: 498px;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.headset-animation-session{
+    img{
+        height: 630px;
+        width: 498px ;
     }
 }
