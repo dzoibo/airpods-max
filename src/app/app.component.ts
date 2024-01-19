@@ -39,40 +39,106 @@ ngOnInit(): void {
       return;
     }
     this.focusedHeadset=this.focusedHeadset+1;
+    this.swipeImage("next")
     setTimeout(() => {
       this.showHideButton("next");
       this.fill_background();
     }, 50);
-    console.log(this.focusedHeadset);
-    gsap.to(".headsetA", {
-       rotation: 0,
-       duration: this.gsapDuration,
-       left: "50%",
-       x:"-50%",
-       height:630,
-       width:498,
-       });
-    gsap.to(".headsetC",{
-      height: 150,
-      duration: this.gsapDuration,
-      width: 119,
-      left: -20,
-      bottom:0,
-      rotation:121.208,
-      x:0,
-    })
-    gsap.to(".headsetB",{
-      duration: 0.5,
-      rotation:360,
-      x:-200,
-      translateY:200,
-    });
-    gsap.to(".headsetB",{
-      duration: 0.2,
-      opacity:0,
-      delay:0.3
-    })
+  }
 
+  swipeImage(direction: string){
+    if(this.focusedHeadset===1){
+      gsap.to(".headsetSliver", {
+        rotation: 0,
+        duration: this.gsapDuration,
+        left: "50%",
+        x:"-50%",
+        height:630,
+        width:498,
+      });
+      gsap.to(".headsetBlack",{
+        height: 150,
+        duration: this.gsapDuration,
+        width: 119,
+        left: -20,
+        bottom:0,
+        rotation:121.208,
+        x:0,
+      })
+      gsap.to(".headsetPink",{
+        duration: 0.5,
+        rotation:360,
+        x:-200,
+        translateY:200,
+      });
+      gsap.to(".headsetPink",{
+        duration: 0.2,
+        opacity:0,
+        delay:0.3
+      })
+    }else if(this.focusedHeadset===2 && direction==="next"){
+      gsap.to(".headsetBlack", {
+        rotation: 0,
+        duration: this.gsapDuration,
+        left: "50%",
+        x:"-50%",
+        height:630,
+        width:498,
+        bottom:"auto",
+        top:"auto",
+      });
+      gsap.to(".headsetSliver",{
+        height: 150,
+        duration: this.gsapDuration,
+        width: 119,
+        left: -80,
+        bottom:"auto",
+        top:0,
+        rotation:28,
+        x:0,
+      })
+      gsap.to(".headsetPink",{
+        duration: 0.5,
+        rotation:360,
+        delay:0.2,
+        x:0,
+        translateY:0,
+      });
+      gsap.to(".headsetPink",{
+        duration: 0.2,
+        opacity:1,
+      })
+    }else if(this.focusedHeadset===2 && direction==="prev"){
+      gsap.to(".headsetSliver", {
+        rotation: 0,
+        duration: this.gsapDuration,
+        left: "50%",
+        x:"-50%",
+        height:630,
+        width:498,
+      });
+      gsap.to(".headsetBlack",{
+        height: 150,
+        duration: this.gsapDuration,
+        width: 119,
+        left: -20,
+        bottom:0,
+        rotation:121.208,
+        x:0,
+      })
+      gsap.to(".headsetPink",{
+        duration: 0.5,
+        rotation:28,
+        x:-200,
+        translateY:200,
+      });
+      gsap.to(".headsetPink",{
+        duration: 0.2,
+        opacity:0,
+        delay:0.3
+      })
+    }
+    
   }
 
   showPrev(){

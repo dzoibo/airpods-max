@@ -6,13 +6,13 @@
                 <img src="../assets/AirPods_max.png" alt="text-background">
             </div>
             <div class=" headsetAnimation-session grow flex z-20 justify-center relative ">
-                <div class="headsetA">
+                <div class="headsetSliver">
                     <img class="w-full" src="../assets/argent_airpods.png" alt="sliver-headset">
                 </div>
-                <div class="headsetB">
+                <div class="headsetPink">
                     <img class="w-full" src="../assets/rose_airpods.png" alt="pink-headset">
                 </div>
-                <div class="headsetC ">
+                <div class="headsetBlack ">
                     <img class="w-full" src="../assets/noir_airpods.png" alt="black-headset">
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         <span>Rose</span>
                         <div class="animated-background" [ngClass]="focusedHeadset===3?'show-animated-background':'remove-animated-background'"></div>
                     </div>
-                    <div class="w-[94px] rounded-2xl blue-slider h-[5px] absolute bottom-[1px] translate-x-[114px] bg-[#0071E3]"></div>
+                    <div class="w-[94px] rounded-2xl blue-slider h-[5px] ml-[1px] absolute bottom-[1px] translate-x-[114px] bg-[#0071E3]"></div>
                 </div>
             </div> 
         </div>  
@@ -76,7 +76,7 @@
 
             <div (click)="showNext()" class="next rounded-[1435px]  bg-[#0071E3] flex justify-between items-center p-2.5" >
                 <span class=" next-text opacity-0 absolute mr-1">Précédent</span>
-                <span class="mr-2 prev-text">Suivant</span>
+                <span class="mr-3 prev-text">Suivant</span>
                 <svg class="next-icon" xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
                     <path opacity="0.4" d="M16.4997 2.72014C8.98809 2.72014 2.89875 8.80948 2.89875 16.3211C2.89875 23.8326 8.98809 29.922 16.4997 29.922C24.0112 29.922 30.1006 23.8326 30.1006 16.3211C30.1006 8.80948 24.0113 2.72015 16.4997 2.72014Z" fill="white"/>
                     <path d="M14.7862 10.4999C15.0446 10.4999 15.303 10.5951 15.5071 10.7991L20.3082 15.6002C20.7026 15.9946 20.7026 16.6475 20.3082 17.0419L15.5071 21.843C15.1126 22.2375 14.4598 22.2375 14.0654 21.843C13.6709 21.4486 13.6709 20.7958 14.0654 20.4013L18.1456 16.3211L14.0654 12.2408C13.6709 11.8464 13.6709 11.1935 14.0654 10.7991C14.2558 10.5951 14.5142 10.4999 14.7862 10.4999Z" fill="white"/>

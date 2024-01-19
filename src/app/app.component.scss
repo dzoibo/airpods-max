@@ -60,18 +60,18 @@
 
 }
 
-.headsetA{
+.headsetSliver{
     @extend .no-selected-headset;
     transform: rotate(28deg);
     top: 0px
 }
 
-.headsetB{
+.headsetPink{
     @extend .no-selected-headset;
     transform: rotate(121.208deg);
     bottom: 0px;
 }
-.headsetC{
+.headsetBlack{
     @extend .no-selected-headset;
     height: 630px;
     width: 498px;
