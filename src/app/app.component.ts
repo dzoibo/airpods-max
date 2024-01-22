@@ -168,6 +168,9 @@ ngOnInit(): void {
       width:498,
       });
 
+    const blackHeadset = Array.from(document.getElementsByClassName('blackHeadset') as HTMLCollectionOf<HTMLElement>)
+    blackHeadset[0].style.top = "auto";
+    
     gsap.to(".blackHeadset",{
       duration: this.gsapDuration,
       rotation:121.208,
@@ -175,10 +178,10 @@ ngOnInit(): void {
       width: 119,
       left: -20,
       bottom:0,
-      top:"auto",
       x:0,
     });
 
+    
     gsap.to(".pinkHeadset",{
       duration: 0.5,
       rotation:360,
