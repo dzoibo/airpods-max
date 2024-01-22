@@ -42,36 +42,9 @@ ngOnInit(): void {
     setTimeout(() => {
       this.showHideButton("next");
       this.fill_background();
+      this.swipeHeadset("next");
     }, 50);
-    console.log(this.focusedHeadset);
-    gsap.to(".headsetA", {
-       rotation: 0,
-       duration: this.gsapDuration,
-       left: "50%",
-       x:"-50%",
-       height:630,
-       width:498,
-       });
-    gsap.to(".headsetC",{
-      height: 150,
-      duration: this.gsapDuration,
-      width: 119,
-      left: -20,
-      bottom:0,
-      rotation:121.208,
-      x:0,
-    })
-    gsap.to(".headsetB",{
-      duration: 0.5,
-      rotation:360,
-      x:-200,
-      translateY:200,
-    });
-    gsap.to(".headsetB",{
-      duration: 0.2,
-      opacity:0,
-      delay:0.3
-    })
+  
 
   }
 
@@ -83,6 +56,7 @@ ngOnInit(): void {
       setTimeout(() => {
       this.showHideButton("prev");
       this.fill_background();
+      this.swipeHeadset("prev");
     }, 50);
   }
 
@@ -181,5 +155,135 @@ ngOnInit(): void {
         duration: this.gsapDuration
       });
     }
+  }
+
+  swipeHeadset(direction: string){
+   if (this.focusedHeadset===1){
+    gsap.to(".sliverHeadset", {
+      rotation: 0,
+      duration: this.gsapDuration,
+      left: "50%",
+      x:"-50%",
+      height:630,
+      width:498,
+      });
+
+    gsap.to(".blackHeadset",{
+      duration: this.gsapDuration,
+      rotation:121.208,
+      height: 150,
+      width: 119,
+      left: -20,
+      bottom:0,
+      top:"auto",
+      x:0,
+    });
+
+    gsap.to(".pinkHeadset",{
+      duration: 0.5,
+      rotation:360,
+      x:-200,
+      translateY:200,
+    });
+
+    gsap.to(".pinkHeadset",{
+      duration: 0.2,
+      opacity:0,
+      delay:0.3
+    });
+    
+   }else if(this.focusedHeadset===2 && direction==="next"){
+    gsap.to(".sliverHeadset", {
+      rotation: 28,
+      duration: this.gsapDuration,
+      left: -80,
+      x:0,
+      height:150,
+      width:119,
+      top:0
+      });
+    gsap.to(".blackHeadset",{
+      duration: this.gsapDuration,
+      rotation: 0,
+      height:630,
+      width:498,
+      left: "50%",
+    });
+    gsap.to(".pinkHeadset",{
+      duration: 0.3,
+      opacity:1,
+    });
+    gsap.to(".pinkHeadset",{
+      duration: this.gsapDuration,
+      translateY:0,
+      rotation:121.208,
+      x:0,
+    });
+
+  }else if(this.focusedHeadset===3){
+    gsap.to(".sliverHeadset", {
+      rotation: 360,
+      duration: this.gsapDuration,
+      x:-200,
+      y:200,
+      height:150,
+      width:119,
+      top:0
+      });
+    gsap.to(".sliverHeadset",{
+      duration: 0.4,
+      opacity:0,
+      delay:0.3
+    });
+    gsap.to(".blackHeadset",{
+      rotation: 28,
+      duration: this.gsapDuration,
+      left: -80,
+      x:0,
+      height:150,
+      width:119,
+      top:0
+    });
+    gsap.to(".pinkHeadset",{
+      duration: this.gsapDuration,
+      rotation: 0,
+      height:630,
+      width:498,
+      left: "50%",
+      x: "-50%"
+    });
+    
+  }else{
+    gsap.to(".sliverHeadset", {
+      rotation: 28,
+      duration: this.gsapDuration,
+      x:0,
+      y:0,
+      height:150,
+      width:119,
+      top:0
+      });
+    gsap.to(".sliverHeadset",{
+      duration: 0.4,
+      opacity:1,
+    });
+    gsap.to(".blackHeadset",{
+      rotation: 0,
+      duration: this.gsapDuration,
+      left: "50%",
+      height:630,
+      width:498,
+    });
+    gsap.to(".pinkHeadset",{
+      duration: this.gsapDuration,
+      rotation: 121.208,
+      height:150,
+      width:119,
+      left: -80,
+      x: 0,
+      bottom: 0
+    });
+    
+  }
   }
 }
